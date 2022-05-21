@@ -1,0 +1,13 @@
+ALL I NEED TO KNOW ABOUT JIRA SOFTWARE MGT SYSTEM
+
+NEW ROLES: WHAT I LEARNED
+
+EPIC: Abstrac view of what project you are creating.
+STORY:Breaking down what is REQUIRED to achieved your EPIC
+SCRUM ROLES: Hierarchy of employees working on a software dev
+	     project and how they function to achieve agile dev
+	     SCRUM ROLES is made up of:
+		1. Project Owner - some1 responsible for the entire project
+		2. Scrum Manager - middle man that connects and manages the flow
+				   of information between the product owner and the dev team
+		3. Scrum Team: employees that are hands on and completing the tasks

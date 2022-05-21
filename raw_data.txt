@@ -1,0 +1,75 @@
+JOB DESCRIPTION FOR 01/03/2022
+>> Create an options input in the front-end - done
+>> Create the mongooDB object documents(schema) for the dl - done
+>> work on the logic of the api/v1/dl
+>> Ensure it return the data on the front end
+
+mongoDB password: 35545177
+	Username:danities 
+link: mongodb+srv://danities:<password>@firstnodejsproject.q7yvu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+
+
+
+
+
+
+
+post request: https://api/v1/verifications/
+get post: '/dl'
+
+
+Parameters:
+Header:
+authentication  - string  -  Authentication token.
+
+Body:
+
+id    -   string  -   The driver license ID number
+
+first_name  -  string   - The first name of the document holder.
+
+last_name  - string  -The last name of the document holder
+
+middle_name  -  string    - The middle name of the document holder.
+
+date_of_birth  -  string   - The date of birth of the document holder in the format yyyy-MM-dd.
+
+phone_number  - string   - The phone number of the document holder.
+
+gender  - string    -The gender of the document holder in the format M or F for male or female respectively.
+
+address  -  string   -  The residential address of the document holder.
+
+expiry_date  - string   -The expiry date of the document in the format yyyy-MM-dd.
+
+Responses:
+
+200(success):
+
+{
+  "id": "AKW06968AA2",
+  "first_name": "John",
+  "last_name": "Doe",
+  "middle_name": "Donald",
+  "date_of_birth": "1996-02-21",
+  "phone_number": "+234000000000",
+  "gender": "M",
+  "address": "294 Herbert Macaulay Way, Yaba 101212, Lagos, Nigeria",
+  "expiry_date": "2022-04-12",
+  "is_first_name_match": true,
+  "is_last_name_match": true,
+  "is_middle_name_match": true,
+  "is_date_of_birth_match": true,
+  "is_phone_number_match": true,
+  "is_gender_match": true,
+  "is_address_match": true,
+  "is_expiry_date_match": true,
+  "image": "BASE_64 encoded image",
+  "verification_ref" "eedbc8bd-dfd8-4d24-846d-597e95872e08"
+}
+
+404(failed)
+{
+    "message": "Invalid ID Card Details",
+    "code": 5
+}
