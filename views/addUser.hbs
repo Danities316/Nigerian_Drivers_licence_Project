@@ -10,108 +10,410 @@
   <div class=""><h5>Edit New Driver's Licence Application</h5></div>
 </div>
 
-<div class="container">
+<div class="container fs-12">
+<form>
 <fieldset class="scheduler-border">
 <legend class="scheduler-border">Personel Details</legend>
 <div class="row g-3 needs-validation pt-5 align-self-center" method="POST" action="/adduser" novalidate> 
 
-<div class="col-4">
+<div class="col-4 pb-4">
+   <label for="floatingInput">First Name</label>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="Name">
-  <label for="floatingInput">First Name</label>
+  <input type="text" class="form-control" id="floatingInput" name="Fname">
 </div>
 </div>
 
-<div class="col-4">
-<div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="Username">
+<div class="col-4 pb-4">
   <label for="floatingInput">Middle Name</label>
-</div>
-</div>
-
-<div class="col-4">
 <div class="form-floating mb-3">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password">
-  <label for="floatingPassword">Last Name(Surname)</label>
-</div>
-</div>
-
-<div class="col-4">
-<div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="Name">
-  <label for="floatingInput">Mothers Maiden Name</label>
-</div>
-</div>
-
-<div class="col-4">
-<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="Mname">
   
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingPassword">Last Name(Surname)</label>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="Lname">
+ 
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Mothers Maiden Name</label>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="MMN">
+ 
+</div>
+</div>
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Gender</label>
+<div class="form-floating mb-3" name="Gender">
 <select class="form-control">
+  <option>Please Select</option>
   <option>Male</option>
    <option>Female</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Date Of Birth(DD/MM/YYYY)</label>
+<div class="form-floating mb-3">
+  <input type="date" class="form-control" id="birthday" name="birthday">
+</div>
+</div>
+        
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Blood Group</label>
+<div class="form-floating mb-3" name = "BG">
+<select class="form-control">
+  <option>Please Select</option>
+   <option>A+</option>
+   <option>A-</option>
+   <option>AB+</option>
+   <option>AB-</option>
+   <option>B+</option>
+   <option>B-</option>
+   <option>O+</option>
+   <option>O-</option>
+   <option>Unknown</option>
 </select>
 
 </div>
 </div>
 
+<div class="col-4 pb-4">
+  <label for="floatingInput">facial Mark</label>
+<div class="form-floating mb-3" name = "facialMark">
+<select class="form-control">
+  <option>Please Select</option>
+   <option>Yes</option>
+   <option>No</option>  
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Use of Glasses</label>
+<div class="form-floating mb-3" name = "facialMark">
+<select class="form-control">
+  <option>Please Select</option>
+   <option>Yes</option>
+   <option>No</option>  
+</select>
+</div>
+</div>
+
+{{!-- Creating model --}}
 <div class="col-4">
+   <label for="floatingInput">Height</label>
+<!-- Button trigger modal -->
+<input type="button" class="form-control pb-4" data-bs-toggle="modal" data-bs-target="#exampleModal" name="Lname" id="floatingPassword">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Height Calculater</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h1>Iam going to create the Calculater here</h1>
+      </div>
+      <div class="row modal-footer">
+        <button type="button" class="col align-self-start btn border " data-bs-dismiss="modal">Close</button>
+        <button type="button" class="col align-self-end btn border">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Tax Identification Number (TIN)</label>
 <div class="form-floating mb-3">
-  <input type="date" class="form-control" id="birthday" name="birthday" placeholder="MM/DD/YYY">
-  <label for="floatingPassword">Date of Birth (dd/mm/yyyy)</label>
+  <input type="text" class="form-control" id="floatingInput" name="tax">
 </div>
 </div>
-        
 
-
-
-<div class="col-4">
+<div class="col-4 pb-4">
+    <label for="floatingPassword">National Identification Number (NIN)</label>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="Name">
-  <label for="floatingInput">Full Name</label>
+  <input type="text" class="form-control" id="floatingInput"  name="NIN">
 </div>
 </div>
 
-<div class="col-4">
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Nationality</label>
+<div class="form-floating mb-3" name="Gender">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Nigeria</option>
+   <option>Ghana</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">State Of Origin</label>
+<div class="form-floating mb-3" name="Gender">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Kogi</option>
+   <option>Bayelsa</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">LGA</label>
+<div class="form-floating mb-3" name="Gender">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Omala</option>
+   <option>Sagbama</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Any Form of Disability</label>
+<div class="form-floating mb-3" name="Gender">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Yes</option>
+   <option>No</option>
+</select>
+</div>
+</div>
+</fieldset>
+
+{{!-- second page --}}
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Contact Details</legend>
+<div class="row g-3 needs-validation pt-5 align-self-center" method="POST" action="/adduser" novalidate> 
+<div class="col-4 pb-4">
+   <label for="floatingInput">Mobile Number</label>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="Username">
-  <label for="floatingInput">Username</label>
+  <input type="text" class="form-control" id="floatingInput" name="Pnumber">
 </div>
 </div>
 
-<div class="col-4">
+<div class="col-4 pb-4">
+  <label for="floatingInput">Next of Kin Phone Number</label>
 <div class="form-floating mb-3">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password">
-  <label for="floatingPassword">Password</label>
+  <input type="text" class="form-control" id="floatingInput" name="NokNumber">
+  
 </div>
 </div>
 
-<div class="col-4">
+<div class="col-4 pb-4">
+   <label for="floatingInput">Email</label>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Full Name" name="Name">
-  <label for="floatingInput">Full Name</label>
+  <input type="email" class="form-control" id="floatingInput" name="Lname">
+ 
 </div>
 </div>
+</div>
+</fieldset>
 
-<div class="col-4">
+
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Residential Address</legend>
+<div class="row g-3 needs-validation pt-5 align-self-center" method="POST" action="/adduser" novalidate> 
+<div class="col-4 pb-4">
+   <label for="floatingInput">Address Line1</label>
 <div class="form-floating mb-3">
-  <input type="text" class="form-control" id="floatingInput" placeholder="Username" name="Username">
-  <label for="floatingInput">Username</label>
+  <input type="text" class="form-control" id="floatingInput" name="address1">
 </div>
 </div>
 
-<div class="col-4">
+<div class="col-4 pb-4">
+  <label for="floatingInput">Address Line2</label>
 <div class="form-floating mb-3">
-  <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="Password">
-  <label for="floatingPassword">Password</label>
+  <input type="text" class="form-control" id="floatingInput" name="address2">
+  
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">City</label>
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" name="city">
+ </div>
+</div>
+
+ <div class="col form-check">
+  <input class="col-2 form-check-input" type="checkbox" id="check1" name="checkaddress" value="something">
+  <label class="col-8 form-check-label">Check if your mailing address is same as residential address</label>
+  </div>
+
+</div>
+</fieldset>
+
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Mailing Address</legend>
+<div class="row g-3 needs-validation pt-5 align-self-center" method="POST" action="/adduser" novalidate> 
+<div class="col-4 pb-4">
+   <label for="floatingInput">Address Line1</label>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="address1">
+</div>
+</div>
+
+<div class="col-4 pb-4">
+  <label for="floatingInput">Address Line2</label>
+<div class="form-floating mb-3">
+  <input type="text" class="form-control" id="floatingInput" name="address2">
+  
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">City</label>
+<div class="form-floating mb-3">
+  <input type="email" class="form-control" id="floatingInput" name="city">
+ </div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Nationality</label>
+<div class="form-floating mb-3" name="nationality">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Nigeria</option>
+   <option>Ghana</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">State Of Origin</label>
+<div class="form-floating mb-3" name="state">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Kogi</option>
+   <option>Bayelsa</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">LGA</label>
+<div class="form-floating mb-3" name="lga">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Omala</option>
+   <option>Sagbama</option>
+</select>
+</div>
+</div>
+
+</div>
+</fieldset>
+
+
+
+{{!-- Third page --}}
+<fieldset class="scheduler-border">
+<legend class="scheduler-border">Processing Center & Licence Type</legend>
+<div class="row g-3 needs-validation pt-5 align-self-center" method="POST" action="/adduser" novalidate> 
+<div class="col-4 pb-4">
+   <label for="floatingInput">State</label>
+<div class="form-floating mb-3" name="state">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Kogi</option>
+   <option>Bayelsa</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">LGA</label>
+<div class="form-floating mb-3" name="LGA">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Omala</option>
+   <option>Sagbama</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Capture Center</label>
+<div class="form-floating mb-3" name="CaptureC">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>Omala</option>
+   <option>Sagbama</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Licence Class</label>
+<div class="form-floating mb-3" name="Lclass">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>A</option>
+   <option>B</option>
+   <option>C</option>
+   <option>D</option>
+   <option>E</option>
+   <option>F</option>
+   <option>G</option>
+   <option>H</option>
+</select>
+</div>
+</div>
+
+<div class="col-4 pb-4">
+   <label for="floatingInput">Validity Period</label>
+<div class="form-floating mb-3" name="Lclass">
+<select class="form-control">
+  <option>Please Select</option>
+  <option>5 Years</option>
+   <option>3 Years</option>
+</select>
 </div>
 </div>
 
 
-<div class="col-12 d-grid">
-    <button class="btn btn-primary" type="submit">+ Add User</button>
+</div>
+</fieldset>
+
+   <div class="form-group">
+    <div class="g-recaptcha" data-sitekey="6LfzFwogAAAAAFwtNDyj-CPDkK8V4SJk0nX92fVh" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+    <input class="form-control d-none" data-recaptcha="true" required data-error="Please complete the Captcha">
+    <div class="help-block with-errors"></div>
+        </div>
+
+
+        <div class="col form-check p-4">
+  <input class="form-check-input" type="checkbox" id="check1" name="checkaddress" value="something">
+  <label class="col-12 form-check-label">I declare that the information provided in this document is true and binding on me. I will notify the appropriate authorities of any change therein. </label>
+  </div>
+
+
+
+
+
+
+<div class="row">
+<div class="col-6 d-grid">
+    <button class="btn btn-primary adduserbtn2" type="submit">Start Over</button>
 </div>
 
+<div class="col-6 d-grid">
+    <button class="btn btn-primary adduserbtn" type="submit">+ Add User</button>
+</div>
+</div>
 
 </form>
-</fieldset>
 </div>
