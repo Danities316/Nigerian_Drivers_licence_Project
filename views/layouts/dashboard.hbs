@@ -1,0 +1,70 @@
+
+  
+<div class="container mb-5 border border-info">
+  <div class="row pt-3 pb-3 bg-primary text-light fs-3">Filters</div>
+  <div class="row pt-5 pb-5">
+    
+    <form method="POST" action="/" novalidate>
+    <div class="col m-2">
+    <input type="search" class="form-control p-3 ml-5" name="search" aria-label="Search" placeholder="Name">
+    </div>
+
+    {{!-- <div class="col order-5">
+    <input type="search" class="form-control p-3" name="username" aria-label="Search"  placeholder="Username">
+    </div> --}}
+
+    {{!-- <div class="col order-1">
+    <input type="search" class="form-control p-3" name="pin" aria-label="Search"  placeholder="PIN">
+    </div>
+  </div> --}}
+</div>
+  <div class="row container pb-3">
+    <div class="col-6 d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary p-3 fs-5"> >> Search</button>
+    </div>
+    <div class="col-6 d-flex justify-content-start"><a href="/adduser" class="btn btn-primary align-self-center p-3 fs-5">+ add User</a></div>
+  </div>
+
+  </form>
+  
+
+</div>
+
+<table class="table table-bordered table-hover">
+<div class="row g-3 align-items-center">
+
+
+ 
+  <thead>
+    <div class="bg-primary pt-3 pb-3 text-light row">
+  <div class="col-6 fs-3">Application List </div>
+</div>
+    <tr class="text-primary">
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Username</th>
+      <th scope="col">Password</th>
+      <th scope="col">PIN</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody class="fs-5">
+    {{#each rows}}
+    <tr>
+      <th scope="row">{{this.idUser}}</th>
+      <td>{{this.Name}}</td>
+      <td>{{this.Username}}</td>
+      <td>{{this.Password}}</td>
+      <td>{{this.PIN}}</td>
+ 
+      <td>
+        <a href="#" type="button" class="btn btn-light btn-small bg-primary text-light"><i
+            class="bi bi-eye"
+          ></i>
+          View</a>
+      </td>
+    </tr>
+ {{/ each}}
+  </tbody>
+</table>

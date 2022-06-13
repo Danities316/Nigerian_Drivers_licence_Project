@@ -1,10 +1,13 @@
 const express =require('express');
 const router = express.Router();
-const {view, search, addUser} = require('../controllers/user.controller');
+const {home, view, logins, search, addUser, dashboard} = require('../controllers/user.controller');
 
 //Route
-router.get('/', view);
+router.get('/view', view);
+router.get('/logins', logins);
 router.post('/', search);
 router.get('/adduser', addUser);
+router.get('/', home);
+router.get('/dashboard', dashboard);
 
 module.exports = router;
