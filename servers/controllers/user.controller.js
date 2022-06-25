@@ -1,13 +1,8 @@
 const mysql = require("mysql2");
-require("dotenv").config();
+const bcrypt = require("bcrypt");
+const pool = require('../../config/connection');
 
-const pool = mysql.createPool({
-  connectionLimit: 100,
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DATABASE,
-});
+
 
 exports.view = (req, res) => {
   // res.render('home')
@@ -15,7 +10,7 @@ exports.view = (req, res) => {
   //Conneting to DB
   pool.getConnection((err, connection) => {
     if (err) throw err;
-    console.log("Connect with ID: " + connection.threadId);
+    // console.log("Connect with ID: " + connection.threadId);
 
     connection.query("SELECT * FROM ndl.user LIMIT 10", (err, rows) => {
       //When done wuth the connection release it;
@@ -31,23 +26,52 @@ exports.view = (req, res) => {
   });
 };
 
-exports.logins = (req, res) =>{
-  res.render('logins')
+exports.auth = (req, res) =>{
+  const username = req.body.username;
+  const password = req.body.password;
+
+  if(username && password){
+    //Execute SQL query that would select the account from database based on the sepcified username and password
+    pool.getConnection((err, connection) =>{
+      connection.query('SELECT * FROM ndl.user WHERE username = ? && password = ?',[username, password], (err, result) =>{
+        //if there is an issue with the query, output the err
+        if(err) throw err;
+        //if the accouunt exists
+        if(result.length > 0){
+          //authenticate the user
+          req.session.loggedin = true;
+          req.session.username = username;
+          //Redirect to dashboard
+          res.redirect('dashboard');
+  
+        }else{
+          res.send('Incorrect Username and/Or Password')
+        }
+        res.end()
+      })
+    })
+  } else{
+    res.send('Please enter Username and Password!');
+    res.end
+  }
+  // res.render('dashboard')
 }
+
+
 
 exports.dashboard = (req, res) => {
 
   //Conneting to DB
   pool.getConnection((err, connection) => {
     if (err) throw err;
-    console.log("Connect with ID: " + connection.threadId);
+    // console.log("Connect with ID: " + connection.threadId);
     let searchName = req.body.search;
 
     connection.query(
-      "SELECT * FROM ndl.user WHERE Name LIKE ?",
+      "SELECT * FROM ndl.user LIMIT 10",
       ["%" + searchName + "%"],
       (err, rows) => {
-        // console.log(searchTerms)
+        // console.log(rows)
         //When done wuth the connection release it;
         connection.release();
         if (!err) {
@@ -159,3 +183,4 @@ exports.addUser = (req, res) => {
   }
   res.render("addUser");
 };
+
